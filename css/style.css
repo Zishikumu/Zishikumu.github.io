@@ -1,0 +1,18 @@
+body { 
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #b0c8ff, #7f98be);
+    color: white;min-height: 100vh;
+    overflow-x: hidden;
+}
+h1 { 
+    color: #f06666; 
+}
+img {
+    max-width: 700px; 
+    margin-top: 20px; 
+}
+.section { 
+    margin-bottom: 60px; 
+}
+
+
