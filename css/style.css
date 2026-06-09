@@ -20,10 +20,17 @@ img {
     height: 100vh;
 
     display: flex;
-    justify-content: center; /* horizontal */
+
     align-items: center;     /* vertical */
 }
 
 .bigh h1 {
     margin: 0;
+    justify-content: center; /* horizontal */
+}
+
+.bigh img {
+    width: 50vw;
+    height:300px;
+    object-fit: cover;
 }

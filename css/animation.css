@@ -13,3 +13,7 @@
         opacity: 1;
     }
 }
+
+.bigh {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
