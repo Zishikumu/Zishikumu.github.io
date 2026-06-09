@@ -114,3 +114,189 @@ body {
     }
 }
   
+
+
+.nature-gallery{
+    position:relative;
+    min-height:500vh;
+    overflow:hidden;
+
+    padding:8vh 0;
+
+    background:
+    radial-gradient(circle at 20% 20%,
+    rgba(110,255,160,.15),
+    transparent 35%),
+
+    radial-gradient(circle at 80% 40%,
+    rgba(180,255,180,.18),
+    transparent 40%),
+
+    linear-gradient(
+    180deg,
+    #f4fff4 0%,
+    #eaf7ea 25%,
+    #dff3df 50%,
+    #edf9ed 75%,
+    #ffffff 100%);
+}
+
+/* 背景光斑 */
+
+.bg-blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:0;
+}
+
+.blob1{
+    width:500px;
+    height:500px;
+    background:#76ff8f;
+    top:20vh;
+    left:-100px;
+    opacity:.18;
+}
+
+.blob2{
+    width:700px;
+    height:700px;
+    background:#95ff95;
+    right:-200px;
+    top:160vh;
+    opacity:.15;
+}
+
+.blob3{
+    width:600px;
+    height:600px;
+    background:#3ccf91;
+    left:20vw;
+    bottom:40vh;
+    opacity:.1;
+}
+
+.gallery-item{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    align-items:center;
+
+    gap:3vw;
+
+    width:90vw;
+
+    margin:18vh auto;
+}
+
+.gallery-item.right{
+    flex-direction:row-reverse;
+}
+
+/* 大小錯落 */
+
+.gallery-item.small img{
+    width:40vw;
+    height:30vh;
+}
+
+.gallery-item.medium img{
+    width:50vw;
+    height:36vh;
+}
+
+.gallery-item.large img{
+    width:65vw;
+    height:45vh;
+}
+
+.gallery-item img{
+    object-fit:cover;
+
+    border-radius:28px;
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.12);
+
+    transition:
+    transform .6s ease,
+    box-shadow .6s ease;
+
+    position:relative;
+}
+
+.gallery-item img:hover{
+    transform:
+        scale(1.03)
+        rotate(-1deg);
+
+    box-shadow:
+    0 40px 80px rgba(0,0,0,.18);
+}
+
+/* 圖片裝飾框 */
+
+.gallery-item img::after{
+    content:"";
+}
+
+.gallery-item::before{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border:2px solid rgba(70,180,110,.25);
+
+    border-radius:24px;
+
+    top:-20px;
+
+    left:-20px;
+
+    z-index:-1;
+}
+
+/* 文字 */
+
+.content{
+    max-width:28vw;
+}
+
+.content h3{
+    font-size:2rem;
+    margin-bottom:1rem;
+    color:#235d3f;
+}
+
+.content p{
+    color:#4d5f55;
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+/* 響應式 */
+
+@media(max-width:900px){
+
+    .gallery-item,
+    .gallery-item.right{
+        flex-direction:column;
+    }
+
+    .gallery-item img,
+    .gallery-item.small img,
+    .gallery-item.medium img,
+    .gallery-item.large img{
+        width:90vw;
+        height:35vh;
+    }
+
+    .content{
+        max-width:90vw;
+    }
+}
