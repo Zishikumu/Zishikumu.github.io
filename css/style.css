@@ -1,11 +1,11 @@
 body { 
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #b0c8ff, #7f98be);
+    background: linear-gradient(135deg, #ffffff, #f4f8ff);
     color: white;min-height: 100vh;
     overflow-x: hidden;
 }
 h1 { 
-    color: #f06666; 
+    color: #e38484; 
 }
 img {
     max-width: 700px; 
