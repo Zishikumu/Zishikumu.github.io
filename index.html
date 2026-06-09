@@ -9,13 +9,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Animated Website</title>
 <body>
+<div class="bigh">
+    <h1>Photojouney of my high park trip</h1>
+</div>
 
-<h1>Photojouney of my high park trip</h1>
 
 <p>Hello! Welcome to my Photojouney of my high park trip.</p>
 
 <div class="section">
-    <img src="image/element1.png" alt="Project 1 Graph 1">
+    <img src="image/element1.png" alt="Project 1 Graph 1" height="300px">
     <p>Special Sticks</p>
 </div>
 
@@ -26,7 +28,7 @@
 </div>
 
 <div data-aos="fade-left">
-    <img src="image/element1.png" alt="Project 1 Graph 1">
+    <img src="image/element1.png" alt="Project 1 Graph 1" height="300px">
     <p>Special Sticks</p>
 </div>
 
@@ -45,7 +47,10 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-    AOS.init();
+    AOS.init({
+        once: false
+    });
+
 </script>
 
 </body>
