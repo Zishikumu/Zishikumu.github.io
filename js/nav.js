@@ -18,27 +18,29 @@ if (navbar && bighSection) {
   });
 
   navbarObserver.observe(bighSection);
-} else {
-  console.error('Navbar or bigh section not found');
 }
 
-// Smooth scroll for navbar links
+// Smooth scroll for navbar links (only for same-page links)
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.navbar-menu a');
   
   if (navLinks.length > 0) {
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+        const href = link.getAttribute('href');
+        const targetId = href.substring(1);
         
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+        // Only prevent default if it's a same-page anchor link
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
         }
+        // Otherwise allow normal navigation to other pages
       });
     });
-  } else {
-    console.error('Navbar menu links not found');
   }
 });
