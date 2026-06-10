@@ -1,4 +1,4 @@
-const bigh = document.querySelector(".bigh");
+const bigh = document.querySelector(".bigh-content");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

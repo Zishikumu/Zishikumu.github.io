@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     transition: background-color 0.8s ease;
+    margin: 0;
 }
 
 h1 { 
@@ -24,24 +25,171 @@ img {
     display: flex;
 
     align-items: center;     /* vertical */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff, #c4f8cf);
 }
+.bigh-texture {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/pexels-artempodrez-7233310.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.45;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bigh-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 
 .bigh h1 {
     margin: 0;
     justify-content: center; /* horizontal */
+    z-index: 3;
 }
 
 .bigh img {
     width: 50vw;
     height:300px;
     object-fit: cover;
+    z-index: 3;
 }
 
   
 body {
     margin: 0;
 }
-  
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.3s ease;
+}
+
+.navbar.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d5a3d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo a:hover {
+    color: #46b46e;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #46b46e;
+    transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #2d5a3d;
+}
+
+.navbar-menu a:hover::after {
+    width: 100%;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .navbar-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar-menu a {
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo a {
+        font-size: 1.2rem;
+    }
+
+    .navbar-menu {
+        gap: 10px;
+    }
+
+    .navbar-menu a {
+        font-size: 0.8rem;
+    }
+}
+
+
 #i4wlz {
     z-index: 3;
     top: 379px;
@@ -79,32 +227,56 @@ body {
 }
   
 .gjs-row {
-    display: table;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
-  
+
 .gjs-cell {
-    width: 8%;
-    display: table-cell;
-    height: 75px;
-  }
-  
-.c11738 {
-    width: 30vw;
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    top: 30vh;
-    border-radius: 19px;
-    left: 10vh;
+    height: auto;
 }
-  
+
+.c11738 {
+    width: 100%;
+    max-width: 30vw;
+    height: auto;
+    border-radius: 19px;
+    position: relative;
+    top: auto;
+    left: auto;
+}
+
 .c47275 {
-    float: clip;
+    position: relative;
     display: block;
-    vertical-align: bottom;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #235d3f;
+    font-weight: 600;
+}
+
+#iiyzl {
+    width: 100%;
+    max-width: 30vw;
+    height: auto;
+    border-radius: 20px;
+    position: relative;
+    left: auto;
+    display: block;
 }
   
 @media (max-width: 768px) {
@@ -189,6 +361,16 @@ body {
     width:90vw;
 
     margin:18vh auto;
+    border: 2px solid rgba(70, 180, 110, 0.25);
+    border-radius: 24px;
+    transition: all 0.6s ease;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.4s ease;
+
 }
 
 .gallery-item.right{
@@ -225,6 +407,18 @@ body {
     box-shadow .6s ease;
 
     position:relative;
+}
+
+.gallery-item img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+    border-radius: 28px;
 }
 
 .gallery-item img:hover{
@@ -265,18 +459,47 @@ body {
 
 .content{
     max-width:28vw;
+    position: relative;
 }
 
-.content h3{
-    font-size:2rem;
-    margin-bottom:1rem;
-    color:#235d3f;
+.content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #235d3f;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.content h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(70, 180, 110, 0.8), transparent);
+    transition: width 0.6s ease;
+}
+
+.gallery-item:hover .content h3::after {
+    width: 80px;
 }
 
 .content p{
     color:#4d5f55;
     font-size:1.1rem;
     line-height:1.8;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 4px;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(70, 180, 110, 0.8), transparent);
+    border-radius: 2px;
 }
 
 /* 響應式 */
@@ -298,5 +521,251 @@ body {
 
     .content{
         max-width:90vw;
+    }
+
+    .gallery-item::before {
+        width: 80px;
+        height: 80px;
+        top: -15px;
+        left: -15px;
+    }
+
+    .gallery-item.right::before {
+        left: auto;
+        right: -15px;
+    }
+}
+
+
+
+
+
+
+
+
+/* About Section */
+.about-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #ffffff, #f4f8ff);
+    margin-top: 70px;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-content h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #2d5a3d;
+    margin-bottom: 60px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(70, 180, 110, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.about-card h2 {
+    color: #2d5a3d;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Citation Section */
+.citation-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #ffffff, #f4f8ff);
+    margin-top: 70px;
+}
+
+.citation-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.citation-content h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #2d5a3d;
+    margin-bottom: 20px;
+}
+
+.citation-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.citation-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.citation-group {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(70, 180, 110, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.citation-group:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.citation-group h2 {
+    color: #2d5a3d;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(70, 180, 110, 0.3);
+}
+
+.citation-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(70, 180, 110, 0.1);
+}
+
+.citation-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.citation-item h3 {
+    color: #46b46e;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.citation-item p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.citation-item a {
+    color: #46b46e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.citation-item a:hover {
+    color: #2d5a3d;
+    text-decoration: underline;
+}
+
+.citation-item ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.citation-item ul li {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.citation-attribution {
+    background: linear-gradient(135deg, rgba(70, 180, 110, 0.1), rgba(100, 150, 200, 0.05));
+    border: 2px solid rgba(70, 180, 110, 0.3);
+}
+
+.citation-attribution .citation-item {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .citation-content h1 {
+        font-size: 2rem;
+    }
+
+    .citation-group {
+        padding: 25px;
+    }
+
+    .citation-group h2 {
+        font-size: 1.5rem;
+    }
+
+    .citation-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .citation-item p {
+        font-size: 0.95rem;
+    }
+
+    .citation-intro {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .citation-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .citation-group {
+        padding: 20px;
+    }
+
+    .citation-group h2 {
+        font-size: 1.3rem;
+    }
+
+    .citation-item h3 {
+        font-size: 1rem;
+    }
+
+    .citation-item p {
+        font-size: 0.9rem;
     }
 }
