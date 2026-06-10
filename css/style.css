@@ -290,7 +290,6 @@ body {
 
 .nature-gallery{
     position:relative;
-    min-height:500vh;
     overflow:hidden;
 
     padding:8vh 0;
@@ -381,17 +380,14 @@ body {
 
 .gallery-item.small img{
     width:40vw;
-    height:30vh;
 }
 
 .gallery-item.medium img{
     width:50vw;
-    height:36vh;
 }
 
 .gallery-item.large img{
     width:65vw;
-    height:45vh;
 }
 
 .gallery-item img{
