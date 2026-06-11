@@ -285,34 +285,43 @@ body {
     min-width: 300px;
     max-width: 45%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     height: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border:2px solid rgba(70,180,110,.25);
+    margin:18vh auto;
+    padding: 30px;
+    border-radius:24px;
+    
 }
 
 .c11738 {
     width: 100%;
     max-width: 30vw;
+    display: block;
     height: auto;
     border-radius: 19px;
     position: relative;
+    text-align: center;
     top: auto;
     left: auto;
 }
 
-.c47275 {
+.txt {
     position: relative;
     display: block;
     text-align: center;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 15vh;
     font-size: 1.1rem;
     color: #235d3f;
     font-weight: 600;
 }
 
-#iiyzl {
+.iiyzl {
     width: 100%;
     max-width: 30vw;
     height: auto;
@@ -758,6 +767,37 @@ body {
 .citation-attribution .citation-item {
     border-bottom: none;
     padding-bottom: 0;
+}
+
+
+.mla-citations {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+.mla-citations li {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    text-indent: -30px;
+}
+
+.mla-citations em {
+    font-style: italic;
+}
+
+.mla-citations a {
+    color: #46b46e;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.mla-citations a:hover {
+    color: #2d5a3d;
+    text-decoration: underline;
 }
 
 /* Responsive */
