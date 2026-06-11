@@ -95,7 +95,14 @@ img {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(244, 248, 255, 0.05) 100%);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(70, 180, 110, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
+
 
 
 .bigh h1 {
@@ -109,6 +116,25 @@ img {
     height:300px;
     object-fit: cover;
     z-index: 3;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(70, 180, 110, 0.3), transparent);
+    margin: 20px 0;
+    position: relative;
+}
+
+hr::before {
+    content: "✦";
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    transform: translateX(-50%);
+    color: rgba(70, 180, 110, 0.3);
+    font-size: 1rem;
+    letter-spacing: 2px;
 }
 
   
@@ -282,19 +308,24 @@ body {
 
 .gjs-cell {
     flex: 1;
-    min-width: 300px;
-    max-width: 45%;
+    min-width: 150px;
+    max-width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     height: auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border:2px solid rgba(70,180,110,.25);
-    margin:18vh auto;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(70, 180, 110, 0.25);
+    margin: 18vh auto;
     padding: 30px;
-    border-radius:24px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(244, 248, 255, 0.3) 100%);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
     
 }
 
@@ -331,7 +362,7 @@ body {
     display: block;
 }
   
-@media (max-width: 768px) {
+@media (max-width: 668px) {
     .gjs-cell {
       width: 100%;
       display: block;
@@ -364,13 +395,14 @@ body {
     #ffffff 100%);
 }
 
+
 /* 背景光斑 */
 
 .bg-blob{
     position:absolute;
     border-radius:50%;
     filter:blur(120px);
-    z-index:0;
+    z-index:1;
 }
 
 .blob1{
@@ -387,8 +419,8 @@ body {
     height:700px;
     background:#95ff95;
     right:-200px;
-    top:160vh;
-    opacity:.15;
+    top:450vh;
+    opacity:.25;
 }
 
 .blob3{
@@ -396,8 +428,89 @@ body {
     height:600px;
     background:#3ccf91;
     left:20vw;
-    bottom:40vh;
-    opacity:.1;
+    top:140vh;
+    opacity:.18;
+}
+
+.blob4{
+    width:600px;
+    height:600px;
+    background:#74e8b8;
+    left:60vw;
+    top:200vh;
+    opacity:.3;
+}
+
+.blob5{
+    width:700px;
+    height:700px;
+    background:#77ff68;
+    left:30vw;
+    top:360vh;
+    opacity:.26;
+}
+
+.blob6{
+    width:400px;
+    height:500px;
+    background:#3adf87;
+    left:10vw;
+    top:760vh;
+    opacity:.16;
+}
+
+.blob7{
+    width:300px;
+    height:500px;
+    background:#3adf87;
+    left:23vw;
+    top:860vh;
+    opacity:.19;
+}
+
+.blob8{
+    width:300px;
+    height:500px;
+    background:#8aff6d;
+    left:23vw;
+    top:560vh;
+    opacity:.19;
+}
+
+.blob9{
+    width:600px;
+    height:600px;
+    background:#3ccf91;
+    left:70vw;
+    top:940vh;
+    opacity:.18;
+}
+
+.blob10{
+    width:600px;
+    height:600px;
+    background:#d0ff7f;
+    left:40vw;
+    top:1140vh;
+    opacity:.12;
+}
+
+.blob11{
+    width:800px;
+    height:600px;
+    background:#7fffac;
+    left:20vw;
+    top:1250vh;
+    opacity:.12;
+}
+
+.blob12{
+    width:800px;
+    height:1200px;
+    background:#7fffac;
+    left:20vw;
+    top:1400vh;
+    opacity:.12;
 }
 
 .gallery-item{
@@ -508,6 +621,27 @@ body {
 .content{
     max-width:28vw;
     position: relative;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(70, 180, 110, 0.8), transparent);
+    border-radius: 2px;
+}
+
+.content::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(70, 180, 110, 0.6), transparent);
 }
 
 .content h3 {
