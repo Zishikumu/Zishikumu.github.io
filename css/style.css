@@ -1,5 +1,5 @@
 body { 
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif, 'Poppins', 'Quicksand',;
     background: linear-gradient(135deg, #ffffff, #f4f8ff);
     color: rgb(0, 0, 0);
     min-height: 100vh;
@@ -52,7 +52,11 @@ body {
 }
 
 h1 { 
-    color: #e38484; 
+    font-family: 'Playfair Display', serif;
+    color: #e38484;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 img {
     max-width: 700px; 
@@ -109,6 +113,10 @@ img {
     margin: 0;
     justify-content: center; /* horizontal */
     z-index: 3;
+    font-size: clamp(2rem,8vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .bigh img {
@@ -194,12 +202,14 @@ body {
 }
 
 .navbar-menu a {
+    font-family: 'Poppins', sans-serif;
     color: #333;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
+    letter-spacing: 0.3px;
 }
 
 .navbar-menu a::after {
@@ -488,11 +498,11 @@ body {
 
 .blob10{
     width:600px;
-    height:600px;
+    height:800px;
     background:#d0ff7f;
     left:40vw;
     top:1140vh;
-    opacity:.12;
+    opacity:.23;
 }
 
 .blob11{
@@ -501,7 +511,7 @@ body {
     background:#7fffac;
     left:20vw;
     top:1250vh;
-    opacity:.12;
+    opacity:.19;
 }
 
 .blob12{
@@ -510,7 +520,7 @@ body {
     background:#7fffac;
     left:20vw;
     top:1400vh;
-    opacity:.12;
+    opacity:.22;
 }
 
 .gallery-item{
@@ -668,6 +678,7 @@ body {
 }
 
 .content p{
+    font-family: 'Lora', serif;
     color:#4d5f55;
     font-size:1.1rem;
     line-height:1.8;
